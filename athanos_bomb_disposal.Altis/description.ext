@@ -1,0 +1,88 @@
+respawn = "BASE";
+onLoadName = "athanos bomb disposal";
+onLoadMission = "A demo mission for DEFUSE THE BOMB!";
+author = "various community authors throughout the years";
+respawndelay = 5;
+RespawnDialog = 0;
+disabledAI = 1;
+saving = 0;
+
+class Header
+{
+	gameType = COOP; //game type
+	minPlayers = 1; //min # of players the mission supports
+	maxPlayers = 4; //max # of players the mission supports
+	playerCountMultipleOf = 1; //OFP:Elite option.
+};
+
+#include "bomb\defines.hpp"
+#include "bomb\keypad_defuse\explosivePad.hpp"
+
+class Params
+{
+	class paramZero
+	{
+		title = "At what time of day would you like to play?";
+		values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+		texts[] = {"00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00 (Default)", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"};
+		default = 14;
+	};
+};
+
+
+
+class CfgSounds
+{
+	sounds[]= {button_click,button_close,button_wrong,wire_cut};
+	class button_click {
+		name = "";
+		sound[] = {"bomb\keypad_defuse\sounds\click.ogg", 0.8, 1};
+		titles[] = {};
+	};
+	class button_close {
+		name = "";
+		sound[] = {"bomb\keypad_defuse\sounds\close.ogg", 0.8, 1};
+		titles[] = {};
+	};
+	class button_wrong {
+		name = "";
+		sound[] = {"bomb\keypad_defuse\sounds\wrong.ogg", 0.8, 1};
+		titles[] = {};
+	};
+	class wire_cut {
+		name = "";
+		sound[] = {"bomb\keypad_defuse\sounds\cutting.ogg", 1, 1};
+		titles[] = {};
+	};
+};
+
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "You disarmed the bomb! Standby for extract!";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+		class loser
+	{
+		title = "You all died!";
+		subtitle = "";
+		description = "Everyone is dead.";
+		pictureBackground = "";
+		picture = "KIA";
+		pictureColor[] = {0.6,0.1,0.,1};
+	};
+		class End2
+	{
+		title = "Mission Failed";
+		subtitle = "";
+		description = "The bomb was detonated.";
+		pictureBackground = "";
+		picture = "KIA";
+		pictureColor[] = {0.6,0.1,0.,1};
+	};
+};
