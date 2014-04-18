@@ -268,7 +268,7 @@ class Mission
 					azimut=-122.858;
 					id=19;
 					side="WEST";
-					vehicle="B_soldier_LAT_F";
+					vehicle="B_Soldier_TL_F";
 					player="PLAY CDG";
 					skill=0.40000001;
 				};

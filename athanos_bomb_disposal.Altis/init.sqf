@@ -39,9 +39,8 @@ _bomber=objectFromNetID _bID;
 _bomber addAction [("<t color='#E61616'>" + ("Access Bomb Keypad") + "</t>"),"bomb\keypad_defuse\defuseAction.sqf","",1,true,true,"","(_target distance _this) < 5"];
 };
 
-WIRE=[];
 CODEINPUT = [];
-CODE=[];
+
 
 
 //	Initialize briefing.
