@@ -1,7 +1,7 @@
 respawn = "BASE";
 onLoadName = "athanos bomb disposal";
 onLoadMission = "A demo mission for DEFUSE THE BOMB!";
-author = "various community authors throughout the years";
+author = "k0rd";
 respawndelay = 5;
 RespawnDialog = 0;
 disabledAI = 1;

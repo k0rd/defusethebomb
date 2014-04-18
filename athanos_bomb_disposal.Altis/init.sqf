@@ -3,14 +3,14 @@ _t = (paramsarray select 0);
 if (isserver) then {
 	setDate [2035, 7, 6, _t, 0];
 };
-if (isServer) then {	
+
 	"BombTimer" addPublicVariableEventHandler
 	{
 		private ["_BHint"];
 		_Btime = _this select 1;
 		cutText[format["Bomb Detonation: \n %1", [((_Btime)/60)+.01,"HH:MM"] call BIS_fnc_timetostring],"PLAIN DOWN"];
-		publicVariable "CODE";
-		publicVariable "WIRE";
+//		publicVariable "CODE";
+//		publicVariable "WIRE";
 	};
 	
 //	Initialize some misc stuff.
@@ -38,10 +38,11 @@ _bID= _this select 0;
 _bomber=objectFromNetID _bID;
 _bomber addAction [("<t color='#E61616'>" + ("Access Bomb Keypad") + "</t>"),"bomb\keypad_defuse\defuseAction.sqf","",1,true,true,"","(_target distance _this) < 5"];
 };
+
 WIRE=[];
 CODEINPUT = [];
 CODE=[];
-};
+
 
 //	Initialize briefing.
 [
@@ -66,7 +67,7 @@ CODE=[];
 	[
 		"Credits",
 		[
-			"I guess this script has been written by many people throughout the years."
+			""
 		]
 	]
 ]
