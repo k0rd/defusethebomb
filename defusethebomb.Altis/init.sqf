@@ -1,0 +1,1 @@
+[] execVM "bomb\timer.sqf";
